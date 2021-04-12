@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import UserItem from './UserItem.vue';
+import UserItem from '../components/users/UserItem.vue';
 
 export default {
   components: {
@@ -23,6 +23,11 @@ export default {
       // do something
       this.$router.push('/teams');
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    console.log('usersList cmp beforeRouteEnter');
+    console.log(to, from);
+    next();
   }
 };
 </script>
