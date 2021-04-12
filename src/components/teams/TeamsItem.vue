@@ -12,11 +12,17 @@ export default {
   methods: {
     viewMembers() {
       this.$router.push('/teams/:teamId');
+      // this.$router.push({ name: 'team-members', params: { teamId: this.id } });
     }
   },
   computed: {
     teamMembersLink() {
-      return `/teams/${this.id}`;
+      // return `/teams/${this.id}`;
+      return {
+        name: 'team-members',
+        params: { teamId: this.id },
+        query: { sort: 'asc' }
+      };
     }
   }
 };
